@@ -364,3 +364,142 @@ Found
 */
 
 cout<<"\n--------------------------------------------\n";
+// ============================================================
+// 16. Count the Number of Occurrences of a Given Element (Linear Search)
+// ============================================================
+#include<iostream>
+using namespace std;
+int main(){
+ int n,x,c=0; cout<<"Size: "; cin>>n;
+ int a[n]; cout<<"Enter: ";
+ for(int i=0;i<n;i++) cin>>a[i];
+ cout<<"Find: "; cin>>x;
+ for(int i=0;i<n;i++) if(a[i]==x) c++;
+ cout<<"Count="<<c;
+ return 0;
+}
+
+/*
+Output:
+Size: 6
+Enter: 2 3 4 2 2 5
+Find: 2
+Count=3
+*/
+
+cout<<"\n--------------------------------------------\n";
+
+// ============================================================
+// 17. Check if a Given Number is Present in the Array (Linear Search)
+// ============================================================
+#include<iostream>
+using namespace std;
+int main(){
+ int n,x,f=0; cout<<"Size: "; cin>>n;
+ int a[n]; cout<<"Enter: ";
+ for(int i=0;i<n;i++) cin>>a[i];
+ cout<<"Find: "; cin>>x;
+ for(int i=0;i<n;i++) if(a[i]==x){f=1;break;}
+ cout<<(f?"Present":"Not Present");
+ return 0;
+}
+
+/*
+Output:
+Size: 5
+Enter: 1 3 5 7 9
+Find: 5
+Present
+*/
+
+cout<<"\n--------------------------------------------\n";
+
+// ============================================================
+// 18. Binary Search for an Array of Integers
+// ============================================================
+#include<iostream>
+using namespace std;
+int main(){
+ int n,x,f=0; cout<<"Size: "; cin>>n;
+ int a[n]; cout<<"Enter (sorted): ";
+ for(int i=0;i<n;i++) cin>>a[i];
+ cout<<"Find: "; cin>>x;
+ int l=0,h=n-1,mid;
+ while(l<=h){
+  mid=(l+h)/2;
+  if(a[mid]==x){f=1;break;}
+  else if(a[mid]<x) l=mid+1;
+  else h=mid-1;
+ }
+ cout<<(f?"Found":"Not Found");
+ return 0;
+}
+
+/*
+Output:
+Size: 6
+Enter (sorted): 2 4 6 8 10 12
+Find: 10
+Found
+*/
+
+cout<<"\n--------------------------------------------\n";
+
+// ============================================================
+// 19. Binary Search for Floating-Point Numbers
+// ============================================================
+#include<iostream>
+using namespace std;
+int main(){
+ int n,f=0; float x; cout<<"Size: "; cin>>n;
+ float a[n]; cout<<"Enter (sorted): ";
+ for(int i=0;i<n;i++) cin>>a[i];
+ cout<<"Find: "; cin>>x;
+ int l=0,h=n-1,mid;
+ while(l<=h){
+  mid=(l+h)/2;
+  if(a[mid]==x){f=1;break;}
+  else if(a[mid]<x) l=mid+1;
+  else h=mid-1;
+ }
+ cout<<(f?"Found":"Not Found");
+ return 0;
+}
+
+/*
+Output:
+Size: 5
+Enter (sorted): 1.1 2.2 3.3 4.4 5.5
+Find: 3.3
+Found
+*/
+
+cout<<"\n--------------------------------------------\n";
+
+// ============================================================
+// 20. Search the Largest Element in a Sorted Array using Binary Search
+// ============================================================
+#include<iostream>
+using namespace std;
+int main(){
+ int n; cout<<"Size: "; cin>>n;
+ int a[n]; cout<<"Enter (sorted): ";
+ for(int i=0;i<n;i++) cin>>a[i];
+ int l=0,h=n-1,mid,ans=a[0];
+ while(l<=h){
+  mid=(l+h)/2;
+  ans=a[mid]; // always move right since array sorted
+  l=mid+1;
+ }
+ cout<<"Largest="<<ans;
+ return 0;
+}
+
+/*
+Output:
+Size: 6
+Enter (sorted): 2 5 8 12 15 20
+Largest=20
+*/
+
+cout<<"\n--------------------------------------------\n";
